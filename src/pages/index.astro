@@ -1,0 +1,178 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const whatsappNumber = "6288222668778";
+const whatsappText = encodeURIComponent(
+  "Halo Codesyariah, saya ingin konsultasi layanan website / aplikasi / server."
+);
+const waLink = `https://wa.me/${whatsappNumber}?text=${whatsappText}`;
+const comproLink = "https://codesyariah-webdev.vercel.app";
+
+const services = [
+  ["Laravel & API", "Backend rapi, REST API, dashboard admin, integrasi payment, dan sistem internal."],
+  ["WordPress & Company Profile", "Website bisnis cepat tayang dengan tampilan premium, SEO basic, dan mudah dikelola."],
+  ["E-Commerce & Marketplace", "Katalog, checkout, order management, membership, invoice, dan fitur operasional."],
+  ["VPS, Deploy & Recovery", "Setup server, Nginx, SSL, database, migrasi, debugging production, dan hardening dasar."],
+  ["Maintenance Sistem", "Monitoring, bug fixing, optimasi performa, backup flow, dan perawatan aplikasi berjalan."],
+  ["Custom Business Tools", "CRM, booking, payroll, dashboard laporan, automation, dan tools sesuai proses bisnis."],
+];
+
+const packages = [
+  ["Rapid Fix", "Mulai 300K", "Bug, error, konfigurasi, halaman blank, API gagal, atau server bermasalah."],
+  ["Launch Web", "Mulai 1.5JT", "Company profile, landing page, katalog, dan website promosi siap publikasi."],
+  ["Business System", "Mulai 4JT", "Aplikasi bisnis custom dengan dashboard, database, role user, dan workflow."],
+  ["Deploy Guard", "Mulai 750K", "Deploy VPS, SSL, domain, database, backup, dan konfigurasi production."],
+];
+
+const stacks = ["Laravel", "PHP", "Astro", "JavaScript", "TypeScript", "WordPress", "MySQL", "PostgreSQL", "Linux", "Nginx", "Docker", "REST API"];
+---
+
+<BaseLayout
+  title="Codesyariah Webdev - Full Stack Web Developer"
+  description="Bangun, perbaiki, deploy, dan scale website bisnis dengan layanan Full Stack Web Developer profesional."
+>
+  <main class="site-shell">
+    <header class="nav">
+      <a class="brand" href="#top" aria-label="Codesyariah Webdev">
+        <span class="brand-mark">CS</span>
+        <span>
+          <strong>Codesyariah</strong>
+          <small>Webdev</small>
+        </span>
+      </a>
+      <nav class="nav-links" aria-label="Navigasi utama">
+        <a href="#services">Layanan</a>
+        <a href="#packages">Paket</a>
+        <a href="#proof">Kapabilitas</a>
+        <a href={comproLink} target="_blank" rel="noreferrer">Compro</a>
+        <a class="nav-cta" href={waLink} target="_blank" rel="noreferrer">WhatsApp</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <img src="/images/codesyariah-hero.png" alt="" loading="eager" />
+      </div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Full Stack Web Developer • Laravel • WordPress • VPS</p>
+          <h1 id="hero-title">Website Bermasalah? Sistem Bisnis Harus Tetap Jalan.</h1>
+          <p class="hero-lead">
+            Saya bantu bangun, perbaiki, deploy, dan kembangkan website, e-commerce,
+            marketplace, API, serta server dengan eksekusi cepat, rapi, dan profesional.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">Konsultasi Gratis</a>
+            <a class="btn btn-outline" href={comproLink} target="_blank" rel="noreferrer">Lihat Compro</a>
+            <a class="btn btn-ghost" href="#packages">Lihat Paket</a>
+          </div>
+          <div class="signal-row" aria-label="Keunggulan layanan">
+            <span>Fast response</span>
+            <span>Production ready</span>
+            <span>Clean delivery</span>
+          </div>
+        </div>
+        <aside class="command-panel" aria-label="Ringkasan layanan">
+          <div class="panel-top">
+            <span class="status-dot"></span>
+            <span>service.status</span>
+            <strong>ONLINE</strong>
+          </div>
+          <div class="metric">
+            <small>Focus</small>
+            <strong>Build • Fix • Deploy • Scale</strong>
+          </div>
+          <div class="metric-grid">
+            <div><span>API</span><strong>Stable</strong></div>
+            <div><span>Server</span><strong>Secure</strong></div>
+            <div><span>UI</span><strong>Sharp</strong></div>
+            <div><span>Ops</span><strong>Ready</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="problem-strip" aria-label="Masalah yang ditangani">
+      <p>Website error</p>
+      <p>Checkout gagal</p>
+      <p>Server down</p>
+      <p>API lambat</p>
+      <p>Deploy buntu</p>
+    </section>
+
+    <section class="section" id="services">
+      <div class="section-heading">
+        <p class="eyebrow">Layanan Inti</p>
+        <h2>Eksekusi teknis untuk bisnis yang tidak punya waktu menunggu.</h2>
+      </div>
+      <div class="service-grid">
+        {services.map(([title, description]) => (
+          <article class="service-card">
+            <span class="card-index">0{services.findIndex(([item]) => item === title) + 1}</span>
+            <h3>{title}</h3>
+            <p>{description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="section split-section" id="packages">
+      <div class="section-heading">
+        <p class="eyebrow">Paket Layanan</p>
+        <h2>Pilih mode eksekusi sesuai kondisi bisnis Anda.</h2>
+      </div>
+      <div class="package-grid">
+        {packages.map(([name, price, detail]) => (
+          <article class="package-card">
+            <h3>{name}</h3>
+            <strong>{price}</strong>
+            <p>{detail}</p>
+            <a href={waLink} target="_blank" rel="noreferrer">Ambil Paket</a>
+          </article>
+        ))}
+      </div>
+    </section>
+
+    <section class="capability" id="proof">
+      <div>
+        <p class="eyebrow">Tech Stack</p>
+        <h2>Tools modern, delivery tetap membumi.</h2>
+        <p>
+          Cocok untuk owner bisnis, UMKM serius, startup kecil, internal perusahaan,
+          dan tim yang butuh developer siap turun ke masalah production.
+        </p>
+        <a class="proof-link" href={comproLink} target="_blank" rel="noreferrer">
+          Buka company profile Codesyariah Webdev
+        </a>
+      </div>
+      <div class="stack-list" aria-label="Daftar teknologi">
+        {stacks.map((stack) => <span>{stack}</span>)}
+      </div>
+    </section>
+
+    <section class="process">
+      <div class="process-item">
+        <span>01</span>
+        <h3>Audit Cepat</h3>
+        <p>Kita cek kebutuhan, error, akses, prioritas, dan risiko teknis.</p>
+      </div>
+      <div class="process-item">
+        <span>02</span>
+        <h3>Eksekusi Rapi</h3>
+        <p>Development, fixing, testing, deployment, dan dokumentasi seperlunya.</p>
+      </div>
+      <div class="process-item">
+        <span>03</span>
+        <h3>Launch & Support</h3>
+        <p>Sistem naik, dicek ulang, lalu disiapkan untuk maintenance berikutnya.</p>
+      </div>
+    </section>
+
+    <section class="final-cta">
+      <p class="eyebrow">Siap Jalan</p>
+      <h2>Jangan biarkan website, aplikasi, atau server menahan laju bisnis Anda.</h2>
+      <a class="btn btn-primary" href={waLink} target="_blank" rel="noreferrer">Chat WhatsApp Sekarang</a>
+      <p class="phone">0882-2266-8778</p>
+    </section>
+  </main>
+</BaseLayout>
